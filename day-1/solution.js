@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { userInfo } = require("os");
 
 let numbers = fs
   .readFileSync("./input.txt", "utf-8")
@@ -7,30 +8,36 @@ let numbers = fs
     return parseInt(num);
   });
 
-const solution1 = (numbers) => {
-  for (let [i, num] of numbers.entries()) {
-    for (let j = i + 1; j < numbers.length; j++) {
-      if (num + numbers[j] === 2020) {
-        return num * numbers[j];
+// Why didn't I just sort this?
+const solution1 = (numbers, target) => {
+  let set = new Set();
+  for (let i = 0; i < numbers.length; i++) {
+    if (set.has(target - numbers[i])) {
+      return numbers[i] * (target - numbers[i]);
+    }
+    set.add(numbers[i]);
+  }
+};
+
+// Good question
+const solution2 = (numbers, target) => {
+  numbers = numbers.sort((a, b) => a - b);
+  for (let i = 0; i < numbers.length; i++) {
+    let left = i + 1;
+    let right = numbers.length - 1;
+    while (left < right) {
+      if (numbers[i] + numbers[left] + numbers[right] == target) {
+        return numbers[i] * numbers[left] * numbers[right];
+      } else if (numbers[i] + numbers[left] + numbers[right] < target) {
+        left++;
+      } else {
+        right--;
       }
     }
   }
   return -1;
 };
 
-const solution2 = (numbers) => {
-  for (let [i, num] of numbers.entries()) {
-    for (let j = i + 1; j < numbers.length; j++) {
-      for (let k = j + 1; k < numbers.length; k++) {
-        if (num + numbers[j] + numbers[k] === 2020) {
-          return num * numbers[j] * numbers[k];
-        }
-      }
-    }
-  }
-  return -1;
-};
+console.log(`Solution to Part One: ${solution1(numbers, 2020)}`);
 
-console.log(`Solution to Part One: ${solution1(numbers)}`);
-
-console.log(`Solution to Part Two: ${solution2(numbers)}`);
+console.log(`Solution to Part Two: ${solution2(numbers, 2020)}`);
