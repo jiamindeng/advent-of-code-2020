@@ -13,25 +13,22 @@ for (let i = 0; i < input.length; i = i + 4) {
 }
 
 const letterCount = (scenario) => {
-  return scenario.str.match(new RegExp(scenario.char, "g"))
-    ? scenario.str.match(new RegExp(scenario.char, "g")).length
-    : 0;
+  let matches = scenario.str.match(new RegExp(scenario.char, "g"));
+  return matches ? matches.length : 0;
 };
 
-const solution1 = (scenarios) => {
-  return scenarios
+const solution1 = (scenarios) =>
+  scenarios
     .map((scenario) => {
       let occurrences = letterCount(scenario);
-
       return occurrences >= scenario.min && occurrences <= scenario.max;
     })
     .filter((match) => match === true).length;
-};
 
 console.log(solution1(scenarios));
 
-const solution2 = (scenarios) => {
-  return scenarios
+const solution2 = (scenarios) =>
+  scenarios
     .map((scenario) => {
       let matchesCharOne = scenario.str[scenario.min - 1] === scenario.char;
       let matchesCharTwo = scenario.str[scenario.max - 1] === scenario.char;
@@ -42,6 +39,5 @@ const solution2 = (scenarios) => {
       }
     })
     .filter((match) => match === true).length;
-};
 
 console.log(solution2(scenarios));
