@@ -1,6 +1,4 @@
 const fs = require("fs");
-const { PassThrough } = require("stream");
-const { DEFAULT_MIN_VERSION } = require("tls");
 
 let input = fs.readFileSync("./input.txt", "utf-8").split(/\n/);
 

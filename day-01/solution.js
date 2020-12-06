@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { userInfo } = require("os");
 
 let numbers = fs
   .readFileSync("./input.txt", "utf-8")
