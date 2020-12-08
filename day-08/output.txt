@@ -1,0 +1,5 @@
+Accumulator before retreading: 5.
+{ move: 'jmp', distance: 0 }
+{ move: 'jmp', distance: 0 }
+{ move: 'jmp', distance: 0 }
+{ move: 'jmp', distance: 0 }
