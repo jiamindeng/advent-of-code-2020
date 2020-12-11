@@ -1,5 +1,4 @@
 const fs = require("fs");
-const Deque = require("collections/deque");
 
 let input = fs
   .readFileSync("./input.txt", "utf-8")
