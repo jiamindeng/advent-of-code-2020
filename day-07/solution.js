@@ -3,7 +3,6 @@ const fs = require("fs");
 let input = fs.readFileSync("./input.txt", "utf-8").split(/\n/);
 
 // Part One
-
 let bags = {};
 
 const lineToBag = (line) => {
@@ -48,12 +47,10 @@ for (bag in bags) {
   }
 }
 
-console.log(`Number of colors that can hold a shiny gold bag: ${count}.`);
+console.log(`Part One: ${count}.`);
 
 // Part Two
-
 count = 0;
-
 bags = {};
 
 const lineToBagAgain = (line) => {
@@ -62,7 +59,7 @@ const lineToBagAgain = (line) => {
     .replace(/.*?bags/, "")
     .split(",")
     .map((x) => [
-      Number(x.replace(/[^\d]+/g, "")), // Remove everything but digits
+      Number(x.replace(/[^\d]+/g, "")),
       x
         .replace(/.*\d /, "")
         .replace(/[^a-zA-Z ]/g, "")
@@ -87,6 +84,4 @@ const countBags = (bagName, bags) => {
   return count;
 };
 
-console.log(
-  `Number of bags a shiny gold bag can hold: ${countBags("shiny gold", bags)}.`
-);
+console.log(`Part Two: ${countBags("shiny gold", bags)}.`);

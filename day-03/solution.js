@@ -7,7 +7,6 @@ const getNumTrees = (input) => {
   let count = 0;
   input.forEach((line) => {
     if (line[i % line.length] === "#") {
-      console.log();
       count++;
     }
     i += 3;
@@ -43,4 +42,5 @@ let numTrees = patterns
   .map((pattern) => getNumTreesButAnnoying(input, pattern.right, pattern.down))
   .reduce((accumulator, currentNumTrees) => accumulator * currentNumTrees);
 
-console.log(numTrees);
+console.log(`Part One: ${getNumTrees(input, 3, 1)}`);
+console.log(`Part Two: ${numTrees}`);

@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-let input = fs.readFileSync("./input.txt", "utf-8").split(/\n/);
+let input = fs.readFileSync("./input.txt", "utf-8").split(/\r\n/);
 
 // I hope you like spaghetti.
 const getProperties = (fragment) => {
@@ -10,8 +10,13 @@ const getProperties = (fragment) => {
   });
 };
 
-// ABANDON HOPE
 const hasRequiredProperties = (passport) => {
+  const propertiesToTest = ["iyr", "eyr", "byr", "hcl", "pid", "hgt", "ecl"];
+  return propertiesToTest.every((x) => x in passport);
+};
+
+// ABANDON HOPE
+const hasRequiredPropertiesAgain = (passport) => {
   const propertiesToTest = ["iyr", "eyr", "byr", "hcl", "pid", "hgt", "ecl"];
   if (!propertiesToTest.every((x) => x in passport)) {
     return false;
@@ -86,4 +91,9 @@ let numValidPassports = passports
   .map((passport) => hasRequiredProperties(passport))
   .filter((status) => status === true).length;
 
-console.log(`Number of valid passports: ${numValidPassports}.`);
+let numValidPassportsAgain = passports
+  .map((passport) => hasRequiredPropertiesAgain(passport))
+  .filter((status) => status === true).length;
+
+console.log(`Part One: ${numValidPassports}`);
+console.log(`Part Two: ${numValidPassportsAgain}`);

@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-let input = fs.readFileSync("./input.txt", "utf-8").split(/\n/);
+let input = fs.readFileSync("./input.txt", "utf-8").split(/\r\n/);
 
 const toSeat = (seatId) => {
   let minRow = 0;
@@ -40,5 +40,5 @@ let all = new Set(allSeats);
 let actual = new Set(seatIds);
 let missing = new Set([...all].filter((x) => !actual.has(x)));
 
-console.log(`The highest seat ID is ${Math.max(...seatIds)}.`);
-console.log(`My seat is ${[...missing].join("")}.`);
+console.log(`Part One: ${Math.max(...seatIds)}`);
+console.log(`Part Two: ${[...missing].join("")}`);

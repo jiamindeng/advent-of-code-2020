@@ -17,8 +17,10 @@ for (let i = 1; i < input.length; i++) {
 }
 
 console.log(
-  differences.filter((number) => number === 1).length *
+  `Part One: ${
+    differences.filter((number) => number === 1).length *
     differences.filter((number) => number === 3).length
+  }`
 );
 
 const findCombos = (input) => {
@@ -38,4 +40,4 @@ const findCombos = (input) => {
   return combos;
 };
 
-console.log(findCombos(input)[input.length - 1]);
+console.log(`Part Two: ${findCombos(input)[input.length - 1]}`);

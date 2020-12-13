@@ -35,7 +35,7 @@ const canAdd = (target, traversed) => {
   return false;
 };
 
-console.log(findOutlier(input, 25));
+console.log(`Part One: ${findOutlier(input, 25)}`);
 const sum = (array) => array.reduce((acc, current) => acc + current);
 
 const findContiguousAdd = (target, input) => {
@@ -51,4 +51,4 @@ const findContiguousAdd = (target, input) => {
   }
 };
 
-console.log(findContiguousAdd(findOutlier(input, 25), input));
+console.log(`Part Two: ${findContiguousAdd(findOutlier(input, 25), input)}`);

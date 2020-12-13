@@ -55,4 +55,6 @@ input.forEach((nextMove) => {
   move[nextMove[0]](current, times);
 });
 
-console.log(current);
+console.log(
+  `Part Two: ${Math.abs(current.coord.x) + Math.abs(current.coord.y)}`
+);

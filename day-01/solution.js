@@ -2,7 +2,7 @@ const fs = require("fs");
 
 let numbers = fs
   .readFileSync("./input.txt", "utf-8")
-  .split("\n")
+  .split(/\r\n/)
   .map((num) => {
     return parseInt(num);
   });
@@ -37,6 +37,6 @@ const solution2 = (numbers, target) => {
   return -1;
 };
 
-console.log(`Solution to Part One: ${solution1(numbers, 2020)}`);
+console.log(`Part One: ${solution1(numbers, 2020)}`);
 
-console.log(`Solution to Part Two: ${solution2(numbers, 2020)}`);
+console.log(`Part Two: ${solution2(numbers, 2020)}`);

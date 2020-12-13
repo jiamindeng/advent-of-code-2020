@@ -38,11 +38,7 @@ const traverseUntilRetread = (current, steps) => {
   }
 };
 
-console.log(
-  `Accumulator before retreading: ${
-    traverseUntilRetread(current, steps).accumulator
-  }.`
-);
+console.log(`Part One: ${traverseUntilRetread(current, steps).accumulator}.`);
 
 const findWrongOp = (steps) => {
   let found = false;
@@ -84,4 +80,4 @@ const traverseUntilEnd = (steps) => {
   }
 };
 
-console.log(findWrongOp(steps));
+console.log(`Part Two: ${findWrongOp(steps)}`);

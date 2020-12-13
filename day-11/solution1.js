@@ -60,4 +60,6 @@ while (JSON.stringify(current) !== JSON.stringify(next)) {
   next = flipSeats(current);
 }
 
-console.log(current.flat().filter((seat) => seat === "#").length);
+console.log(
+  `Part One: ${current.flat().filter((seat) => seat === "#").length}`
+);

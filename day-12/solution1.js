@@ -62,4 +62,6 @@ input.forEach((nextMove) => {
   move[nextMove[0]](current, distance);
 });
 
-console.log(current);
+console.log(
+  `Part One: ${Math.abs(current.coord.x) + Math.abs(current.coord.y)}`
+);

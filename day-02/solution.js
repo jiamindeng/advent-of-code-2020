@@ -25,7 +25,7 @@ const solution1 = (scenarios) =>
     })
     .filter((match) => match === true).length;
 
-console.log(solution1(scenarios));
+console.log(`Part One: ${solution1(scenarios)}`);
 
 const solution2 = (scenarios) =>
   scenarios
@@ -40,4 +40,4 @@ const solution2 = (scenarios) =>
     })
     .filter((match) => match === true).length;
 
-console.log(solution2(scenarios));
+console.log(`Part Two: ${solution2(scenarios)}`);
