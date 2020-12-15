@@ -18,7 +18,7 @@ let timeIncrement = Array.from({ length: busIds.length }, () => i++).filter(
 moduli = busIds.filter((busId) => busId !== 0);
 
 let residues = moduli.map((modulus, i) => modulus - timeIncrement[i]);
-
+console.log(moduli, residues);
 // ): This only works for the examples. Numbers are too big for JS, I used Python for my actual input.
 
 console.log(`Part Two: ${crt(moduli, residues)}`);
