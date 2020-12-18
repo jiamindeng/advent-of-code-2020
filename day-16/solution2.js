@@ -1,15 +1,15 @@
-const fs = require("fs");
+const fs = require('fs');
 
-let input = fs.readFileSync("./input.txt", "utf-8");
+let input = fs.readFileSync('./input.txt', 'utf-8');
 
-const YOUR_TICKET = "your ticket:";
-const NEARBY_TICKETS = "nearby tickets:";
+const YOUR_TICKET = 'your ticket:';
+const NEARBY_TICKETS = 'nearby tickets:';
 
 // Probably my worst one to date
 let requirements = input
   .substring(0, input.indexOf(YOUR_TICKET))
   .trim()
-  .replace(/[a-zA-Z:]/g, "")
+  .replace(/[a-zA-Z:]/g, '')
   .split(/[ \n]/g)
   .filter((item) => item.length > 0)
   .map((interval) => {
@@ -20,8 +20,8 @@ let requirements = input
 let requirementKeys = input
   .substring(0, input.indexOf(YOUR_TICKET))
   .trim()
-  .replace(/(?<=:).*/g, "")
-  .split(/[\n:]/)
+  .replace(/(?<=:).*/g, '')
+  .split(/[\r\n:]/)
   .filter((item) => item.length > 0);
 
 let reqs = [];
@@ -110,7 +110,7 @@ for (let i = orderedReq.length - 1; i > 0; i--) {
   );
 }
 
-let departures = orderedReq.filter((req) => !req[0].indexOf("departure"));
+let departures = orderedReq.filter((req) => !req[0].indexOf('departure'));
 
 let product = 1;
 departures.forEach((property) => {
