@@ -2,8 +2,6 @@ const fs = require('fs');
 
 let input = fs.readFileSync('./input.txt', 'utf-8').split(/\r\n\r\n/);
 
-// Nope
-
 let tiles = input.map((string) => {
   let lines = string.split(/\r\n/);
   let tile = {
@@ -240,6 +238,7 @@ const findNessie = (puzzle) => {
     .flat();
 
   let puzzleArray = puzzle.map((line) => line.split(''));
+
   for (let i = 0; i < puzzleArray.length; i++) {
     for (let j = 0; j < puzzleArray[0].length; j++) {
       let isNessie = true;
@@ -273,5 +272,7 @@ let search = puzzleConfigurations
   .filter((puzzleConfiguration) => puzzleConfiguration.includes(0));
 
 [correctPuzzle] = search;
+
+console.log(correctPuzzle);
 
 console.log(`Part Two: ${correctPuzzle.match(/#/g).length}`);
