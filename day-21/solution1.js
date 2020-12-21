@@ -8,7 +8,7 @@ let input = fs
     return [split[0].split(/ /), split[1].replace(/\)/, '').split(/, /)];
   });
 
-let = ingredients = [];
+let ingredients = [];
 let allergens = new Map();
 
 input.forEach(([currentIngredients, currentAllergens]) => {

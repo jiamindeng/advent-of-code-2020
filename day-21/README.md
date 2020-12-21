@@ -23,9 +23,10 @@ The first step is to determine which ingredients can't possibly contain any of t
 
 Determine which ingredients cannot possibly contain any of the allergens in your list. How many times do any of those ingredients appear?
 
-# Your puzzle answer was 2584.
+Your puzzle answer was 2584.
 
---- Part Two ---
+# --- Part Two ---
+
 Now that you've isolated the inert ingredients, you should have enough information to figure out which ingredient contains which allergen.
 
 In the above example:

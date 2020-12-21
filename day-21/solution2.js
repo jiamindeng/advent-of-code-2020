@@ -1,5 +1,4 @@
 const fs = require('fs');
-const { connected } = require('process');
 
 let input = fs
   .readFileSync('./input.txt', 'utf-8')
@@ -9,7 +8,7 @@ let input = fs
     return [split[0].split(/ /), split[1].replace(/\)/, '').split(/, /)];
   });
 
-let = ingredients = [];
+let ingredients = [];
 let allergens = new Map();
 
 input.forEach(([currentIngredients, currentAllergens]) => {
@@ -29,7 +28,6 @@ input.forEach(([currentIngredients, currentAllergens]) => {
 });
 
 allergens = [...allergens.entries()].sort((a, b) => a[1].size - b[1].size);
-console.log(allergens);
 
 let processedAllergens = [];
 
